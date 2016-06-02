@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <form accept-charset="TF-8" method="get" action="/users/new">
+    <form accept-charset="TF-8" method="post" action="/users">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       Email: <input type="text" name="email"><br>
       Username: <input type="text" name="username"><br>
       Password: <input type="text" name="password"><br>
