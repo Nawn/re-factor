@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
   <body>
@@ -10,3 +11,25 @@
     </form>
   </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <%= form_tag('/users') do %>
+    <div>Email: <%= text_field_tag 'user[email]' %></div>
+    <div>Username: <%= text_field_tag 'user[username]' %></div>
+    <div>Password: <%= text_field_tag 'user[password]' %></div>
+    <div><%= submit_tag 'Submit' %></div>
+    <% end  %>
+  </body>
+</html>
+
+-->
+
+<%= form_for(@user) do |f| %>
+Email: <%= f.text_field(:email, :value => "Example@Email.com") %> <br>
+Username: <%= f.text_field :username %> <br>
+Password: <%= f.text_field :password %> <br>
+<%= f.submit %>
+<% end %>
